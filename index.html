@@ -143,17 +143,15 @@
     };
 
     const openSection = (element) => {
-      if (!element.classList.contains(expandedClass)) {
-        element.classList.add(expandedClass);
-        wrapper.classList.add(hasExpandedClass);
-      }
+      if (element.classList.contains(expandedClass)) return;
+      element.classList.add(expandedClass);
+      wrapper.classList.add(hasExpandedClass);
     };
 
     const closeSection = (element) => {
-      if (element.classList.contains(expandedClass)) {
-        element.classList.remove(expandedClass);
-        wrapper.classList.remove(hasExpandedClass);
-      }
+      if (!element.classList.contains(expandedClass)) return;
+      element.classList.remove(expandedClass);
+      wrapper.classList.remove(hasExpandedClass);
     };
 
     return { init: initEvents };
